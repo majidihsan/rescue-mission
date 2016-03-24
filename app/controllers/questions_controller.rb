@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers.order("id desc").limit(5)
+    @answers = @question.answers.order(best_answer: :desc)
   end
 
   def edit

@@ -2,24 +2,26 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @question.title %>
+  <%= markdown(@question.title) %>
 
   <br>
 
   <strong>Description:</strong>
-  <%= @question.description %>
+  <%= markdown(@question.description) %>
 
   <br>
 
   <% @answers.each do |answer| %>
     <br>
   <strong>Answer:</strong>
+  <% if answer.best_answer == true %>
+   (Best Answer!)
+ <% end %>
     <br>
-  <%= answer.body %>
+  <%= markdown(answer.body) %> - <%= link_to 'Best Answer', answer_path(answer), method: :put %>
   <% end %>
 
 </p>
 
-<%= link_to 'Answer',new_question_answer_path(@question) %> |
-<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Answer',new_question_answer_path(@question) %>
 <%= link_to 'Back', questions_path %>

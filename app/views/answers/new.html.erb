@@ -1,11 +1,11 @@
 <p>
   <strong>Title:</strong>
-  <%= @question.title %>
+  <%= markdown(@question.title) %>
 
   <br>
 
   <strong>Description:</strong>
-  <%= @question.description %>
+  <%= markdown(@question.description) %>
 </p>
 
 <h1>New Answer</h1>
