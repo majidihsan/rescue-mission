@@ -1,0 +1,34 @@
+
+<input id="nav-toggle" type="checkbox" name="nav-toggle" class="nav-toggle"/><a id="body-overlay" href="#"></a>
+<aside id="side-nav">
+  <nav id="mobile-nav">
+    <ul>
+      <li class="active"><a href="#">Questions</a></li>
+      <li><a href="/questions">All</a></li>
+      <li><a href="/questions/new">New</a></li>
+    </ul>
+  </nav>
+</aside>
+<div id="wrapper">
+  <header>
+    <div id="header-inner">
+      <label for="nav-toggle" class="mobile-toggle">
+        <div class="top-bar"></div>
+        <div class="middle-bar"></div>
+        <div class="bottom-bar"></div>
+      </label>
+    </div>
+  </header>
+  <main>
+    <info>
+      <h1>Rescue<strong> Mission</strong></h1>
+      <p>write your best Question</p>
+    </info>
+    <section class="page">
+      <h2>Question of the Day</h2>
+      <% @question = Question.all.sample%>
+      <p> <%= link_to (@question.title), question_path(@question.id) %> </p>
+      <p> <%= @question.description %> </p>
+    </section>
+  </main>
+</div>

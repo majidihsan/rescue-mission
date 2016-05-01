@@ -13,7 +13,6 @@ feature "post a question" do
     expect(page).to have_content("i have question")
 
   end
-
   scenario "user successfuly adds a question to the question list" do
 
     visit new_question_path
@@ -24,6 +23,5 @@ feature "post a question" do
     click_on("Create Question")
 
     expect(page).to have_content("errors prohibited this question from being saved")
-
   end
 end

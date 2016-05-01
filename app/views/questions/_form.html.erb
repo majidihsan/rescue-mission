@@ -12,17 +12,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>:<br>
-    <%= f.text_field :title %>
-  </div>
+  <info>
+    <h1>Rescue<strong> Mission</strong></h1>
+    <p>write your best Question</p>
+  </info>
 
-  <div class="field">
-    <%= f.label :description %>:<br>
-    <%= f.text_area :description %>
-  </div>
+  <div class="page">
+    <div class="field">
+    <h1><%= f.label :title %></h1>
+        <%= f.text_field :title %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+    <h1><%= f.label :description %></h1>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class: "button"%>
+    </div>
   </div>
 <% end %>
